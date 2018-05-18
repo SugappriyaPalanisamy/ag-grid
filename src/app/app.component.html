@@ -1,0 +1,57 @@
+ <h1>Ag-Grid Example</h1>
+
+<label >
+            <button (click)="onBtExport()">Export to CSV</button><br><br>
+</label>
+
+<ag-grid-angular
+#agGrid
+style="width: 100%; height: 500px;"
+id="myGrid"
+class="ag-theme-balham"
+[columnDefs]="columnDefs"
+[debug]="true"
+[enableSorting]="true"
+[enableFilter]="true"
+[enableColResize]="true"
+[floatingFilter]="true"
+[suppressDragLeaveHidesColumns]="true"
+[suppressMakeColumnVisibleAfterUnGroup]="true"
+[rowGroupPanelShow]="rowGroupPanelShow"
+(gridReady)="onGridReady($event)"
+
+></ag-grid-angular>
+
+<h2>Master and Detail Grid</h2>
+
+<ag-grid-angular
+    #masterDetailGrid
+    style="width: 100%; height: 500px;"
+    id="masterDetailGrid"
+    class="ag-theme-balham"
+    [columnDefs]="columnDefsDetailGrid"
+    [masterDetail]="true"
+    [detailCellRendererParams]="detailCellRendererParams"
+    (gridReady)="onDetailGridReady($event)"
+    ></ag-grid-angular> 
+ <h1>Primeng Example</h1>
+
+<!-- <p-table [value]="cars" [scrollable]="true" scrollHeight="200px">
+    <ng-template pTemplate="header">
+        <tr>
+            <th *ngFor="let col of cols" [pSortableColumn]="col.field">
+                {{col.header}}
+                <p-sortIcon [field]="col.field"></p-sortIcon>
+            </th>
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-car>
+        <tr>
+            <td *ngFor="let col of cols">
+                {{car[col.field]}}
+            </td>
+        </tr>
+    </ng-template>
+</p-table> -->
+
+
